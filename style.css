@@ -25,7 +25,9 @@ button {
 }
 
 
-/* NAVBAR */
+/* =========================
+   NAVBAR
+========================= */
 
 .navbar {
     position: fixed;
@@ -80,7 +82,9 @@ footer span {
 }
 
 
-/* COMMON */
+/* =========================
+   COMMON
+========================= */
 
 .section-number {
     font-size: 12px;
@@ -95,7 +99,9 @@ footer span {
 }
 
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero {
     min-height: 100vh;
@@ -124,10 +130,11 @@ footer span {
     color: #ff6545;
 }
 
- .hero-bottom {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 25px;
+.hero-bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
 }
 
 .hero-bottom p {
@@ -155,7 +162,9 @@ footer span {
 }
 
 
-/* ABOUT */
+/* =========================
+   ABOUT
+========================= */
 
 .about {
     padding: 120px 5%;
@@ -204,7 +213,9 @@ footer span {
 }
 
 
-/* STATEMENT */
+/* =========================
+   STATEMENT
+========================= */
 
 .statement {
     min-height: 70vh;
@@ -228,7 +239,9 @@ footer span {
 }
 
 
-/* WORK */
+/* =========================
+   WORK
+========================= */
 
 .work {
     padding: 90px 5%;
@@ -242,6 +255,7 @@ footer span {
     margin-top: 40px;
     margin-bottom: 50px;
 }
+
 .work-heading h2 {
     margin: 0;
 }
@@ -252,7 +266,9 @@ footer span {
 }
 
 
-/* PROJECTS */
+/* =========================
+   PROJECTS
+========================= */
 
 .project-card {
     margin-bottom: 65px;
@@ -315,7 +331,6 @@ footer span {
     border-bottom: 1px solid #111111;
 }
 
-
 .project-info h3 {
     font-family: "Space Grotesk", sans-serif;
     font-size: 28px;
@@ -330,7 +345,9 @@ footer span {
 }
 
 
-/* PROCESS */
+/* =========================
+   PROCESS
+========================= */
 
 .process {
     padding: 90px 5%;
@@ -367,10 +384,12 @@ footer span {
 }
 
 
-/* FEEDBACK */
+/* =========================
+   FEEDBACK
+========================= */
 
 .feedback {
-    padding: 120px 5%;
+    padding: 90px 5%;
 }
 
 .feedback blockquote {
@@ -379,7 +398,7 @@ footer span {
     font-size: clamp(45px, 7vw, 100px);
     line-height: 0.92;
     letter-spacing: -4px;
-    margin: 100px 0 50px;
+    margin: 80px 0 50px;
 }
 
 .feedback > p {
@@ -388,7 +407,9 @@ footer span {
 }
 
 
-/* SERVICES */
+/* =========================
+   SERVICES
+========================= */
 
 .services {
     padding: 90px 5%;
@@ -433,10 +454,60 @@ footer span {
 }
 
 
-/* RESOURCE */
+/* SERVICE BUTTON */
+
+.service-button {
+    margin-top: 25px;
+    padding: 10px 18px;
+    border: 1px solid #f5f1e8;
+    background: transparent;
+    color: #f5f1e8;
+    font-family: "DM Sans", sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.service-button:hover {
+    background: #f5f1e8;
+    color: #111111;
+}
+
+
+/* SERVICE DETAILS */
+
+.service-details {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(15px);
+    transition:
+        max-height 0.5s ease,
+        opacity 0.4s ease,
+        transform 0.4s ease;
+}
+
+.service-details p {
+    margin-top: 25px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.service.active .service-details {
+    max-height: 180px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================
+   RESOURCE
+========================= */
 
 .resource {
-    padding: 120px 5%;
+    padding: 90px 5%;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -444,7 +515,7 @@ footer span {
 }
 
 .resource h2 {
-    margin-top: 70px;
+    margin-top: 50px;
     margin-bottom: 0;
     max-width: 900px;
 }
@@ -465,7 +536,9 @@ footer span {
 }
 
 
-/* CONTACT */
+/* =========================
+   CONTACT
+========================= */
 
 .contact {
     min-height: 85vh;
@@ -491,7 +564,9 @@ footer span {
 }
 
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer {
     border-top: 1px solid #444;
@@ -515,7 +590,9 @@ footer a {
 }
 
 
-/* MOBILE */
+/* =========================
+   TABLET / MOBILE
+========================= */
 
 @media (max-width: 900px) {
 
@@ -587,6 +664,10 @@ footer a {
 }
 
 
+/* =========================
+   MOBILE
+========================= */
+
 @media (max-width: 600px) {
 
     .hero {
@@ -600,6 +681,12 @@ footer a {
 
     .hero-bottom {
         align-items: flex-start;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .hero-bottom p {
+        max-width: 100%;
     }
 
     .circle-button {
@@ -621,6 +708,8 @@ footer a {
 
     .statement {
         min-height: 50vh;
+        padding-top: 60px;
+        padding-bottom: 60px;
     }
 
     .statement p {
@@ -628,23 +717,95 @@ footer a {
         letter-spacing: -2px;
     }
 
+
+    /* =========================
+       MOBILE PROJECT IMAGES
+    ========================= */
+
+    .project-card {
+        margin-bottom: 50px;
+    }
+
     .project-image {
-        height: 260vh;
-        min-height: 0px;
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        overflow: hidden;
+        border-radius: 8px;
+    }
+
+    .project-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: contain;
+        transform: none !important;
+    }
+
+    .project-card:hover .project-image img {
+        transform: none;
     }
 
     .project-info {
         flex-direction: column;
         gap: 15px;
+        padding: 15px 0;
+    }
+
+    .project-info h3 {
+        font-size: 26px;
+    }
+
+
+    /* PROCESS */
+
+    .process-item {
+        grid-template-columns: 15% 85%;
+        padding: 28px 0;
     }
 
     .process-item h3 {
         font-size: 25px;
     }
 
+
+    /* FEEDBACK */
+
     .feedback blockquote {
         letter-spacing: -2px;
+        margin: 60px 0 40px;
     }
+
+
+    /* SERVICES */
+
+    .services-grid {
+        gap: 1px;
+    }
+
+    .service {
+        min-height: 0;
+        padding: 30px 25px;
+    }
+
+    .service h3 {
+        font-size: 28px;
+        margin: 30px 0 15px;
+    }
+
+    .service-button {
+        margin-top: 20px;
+    }
+
+
+    /* RESOURCE */
+
+    .resource h2 {
+        margin-top: 40px;
+    }
+
+
+    /* CONTACT */
 
     .contact {
         min-height: 70vh;
@@ -653,8 +814,19 @@ footer a {
     .contact h2 {
         letter-spacing: -3px;
     }
+
+
+    /* FOOTER */
+
+    footer {
+        padding: 30px 5%;
+    }
 }
 
+
+/* =========================
+   SMALL PHONES
+========================= */
 
 @media (max-width: 400px) {
 
@@ -667,53 +839,15 @@ footer a {
     }
 
     .project-image {
-        min-height: 250px;
+        min-height: 0;
     }
-.service {
-    min-height: 0;
-    padding: 30px 25px;
-}
-}
 
-.service-button {
-    margin-top: 25px;
-    padding: 10px 18px;
-    border: 1px solid #f5f1e8;
-    background: transparent;
-    color: #f5f1e8;
-    font-family: "DM Sans", sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: 0.3s ease;
-}
+    .project-info h3 {
+        font-size: 24px;
+    }
 
-.service-button:hover {
-    background: #f5f1e8;
-    color: #111111;
-}
-/* SERVICE DETAILS */
-
-.service-details {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transform: translateY(15px);
-    transition:
-        max-height 0.5s ease,
-        opacity 0.4s ease,
-        transform 0.4s ease;
-}
-
-.service-details p {
-    margin-top: 25px;
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-.service.active .service-details {
-    max-height: 180px;
-    opacity: 1;
-    transform: translateY(0);
+    .service {
+        min-height: 0;
+        padding: 30px 25px;
+    }
 }
